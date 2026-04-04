@@ -4,7 +4,7 @@ import { Request, Response, NextFunction } from "express"
 @Injectable()
 export class AuditMiddleware implements NestMiddleware {
     use(req: Request, res: Response, next: NextFunction) {
-        console.log('Another plane just hit the tower', req.method, res);
+        console.log('Another plane just hit the tower');
         next();
 
     }
