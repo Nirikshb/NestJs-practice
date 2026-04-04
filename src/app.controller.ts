@@ -1,4 +1,4 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Controller, Get, Param, Query } from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller()
@@ -25,4 +25,11 @@ export class AppController {
   getOneProduct(@Param('username') username: string): string {
     return this.appService.getPersonalizedGreeting(username);
   }
+
+
+  @Get('myStaff')
+  getStaffByRole(@Query('role') role: string) {
+    return this.appService.getStaffByRole(role);
+  }
+
 }
