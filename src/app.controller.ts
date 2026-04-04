@@ -1,4 +1,4 @@
-import { Controller, Get, Param, Query } from '@nestjs/common';
+import { Controller, Get, Param, Query, Post, Body } from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller()
@@ -31,5 +31,16 @@ export class AppController {
   getStaffByRole(@Query('role') role: string) {
     return this.appService.getStaffByRole(role);
   }
+
+  // You need to build a feature that allows a user to 
+  // register a new account by sending their email and password.
+  @Post('registerUser')
+  registerUser(
+    @Body() userData: { email: string, password: string }
+  ): string {
+    return this.appService.registerUser(userData.email, userData.password);
+  }
+
+
 
 }

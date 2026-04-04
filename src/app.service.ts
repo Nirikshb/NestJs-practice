@@ -34,4 +34,9 @@ export class AppService {
     }
   }
 
+
+
+  registerUser(email: string, password: string) {
+    return `Hey Registered. -> ${email} `
+  }
 }
