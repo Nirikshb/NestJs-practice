@@ -9,4 +9,14 @@ export class AppController {
   getHello(): string {
     return this.appService.getHello();
   }
+
+  @Get('users')
+  getFakeUser(): string[] {
+    return this.appService.getFakeUser();
+  }
+
+  @Get('sum')
+  getTotalSum(): number {
+    return this.appService.getTotalSum();
+  }
 }
