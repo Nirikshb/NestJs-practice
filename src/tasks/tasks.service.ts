@@ -15,4 +15,9 @@ export class TasksService {
         return littleTasks;
     }
 
+    deleteTask(id: string) {
+        this.tasks = this.tasks.filter(task => task.id !== id)
+        return `task with id ${id} gonzo`
+    }
+
 }
